@@ -22,9 +22,6 @@ int main () {
             i--;
         }
 
-        if 
-
-
             if (a==1){
                 printf("Sprobuj jeszcze raz\n");
                 b_1=1;
