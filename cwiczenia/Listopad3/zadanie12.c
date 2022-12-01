@@ -72,30 +72,62 @@ int sprawdzajaca_do_konca_roku(int a, int b, int c) {
 
     int ilo_dni_dodmiesiac;
 
-    printf("Doszedlem do 73 linii...\n");
+    //printf("Doszedlem do 73 linii...\n");
 
     for (i=b;i<13;i++) {
         ilo_dni_dodmiesiac = sprawdzajaca_ilosc_dni(b, c);
         suma_dni = suma_dni + ilo_dni_dodmiesiac;
     }
 
-    printf("Doszedlem do 80 linii...\n");
+    //printf("Doszedlem do 80 linii...\n");
 
     return suma_dni;
 
 }
 
-int suma_dni_w_roku(int c, int ) {
-    int p, nastepny_rok;
+int suma_dni_w_roku(int c, int f) {
+    int p, m, nastepny_rok, suma_dni_w_f;
     int i =0;
-
-    for (i=c+1;i<f;i++) {
-
-    }
-
-    suma_dni_daty += suma_dni_w_f - dokonca(d,e,f);
+    int suma_dni_lat_do_f = 0;
 
     p=sprawdzajaca_rok(c);
+
+    for (i=c+1;i<=f;i++) {
+
+        m =sprawdzajaca_rok(i);
+
+        if (m==1) {
+            suma_dni_lat_do_f = suma_dni_lat_do_f + 366;     
+        } 
+
+        else {
+            suma_dni_lat_do_f = suma_dni_lat_do_f + 365; 
+        }
+
+        //printf("rok %i, dni razem %i\n",i, suma_dni_lat_do_f);
+    } 
+
+    return suma_dni_lat_do_f;
+}
+
+int suma_dni_pomiedzy_datami() {
+
+    int j = sprawdzajaca_do_konca_roku(a,b,c);
+    
+    int k = sprawdzajaca_do_konca_roku(d,e,f);
+
+    int l = suma_dni_w_roku(c,f);
+
+    //printf("dni w roku %i: %i\n",c, j);
+    //printf("dni w roku %i: %i\n",f, k);
+
+    //printf("dni w latach pomiedzy: %i\n", l);
+
+    int suma = j+l-k;
+
+    //printf("suma tego wyzej to: %i\n", suma);
+    
+    return suma;
 }
 
 int main () {
@@ -118,7 +150,9 @@ int main () {
     printf("Podaj rok:");
     scanf("%i", &f);
 
-    wynik = sprawdzajaca_do_konca_roku(a,b,c);
+    //wynik = suma_dni_w_roku(c,f);
+
+    wynik = suma_dni_pomiedzy_datami();
 
     printf("Liczba dni do konca roku to %i\n",wynik);
 }

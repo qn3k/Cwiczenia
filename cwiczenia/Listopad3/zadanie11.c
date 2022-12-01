@@ -72,14 +72,15 @@ int sprawdzajaca_do_konca_roku(int a, int b, int c) {
 
     int ilo_dni_dodmiesiac;
 
-    printf("Doszedlem do 73 linii...\n");
+    //printf("Doszedlem do 73 linii...\n");
 
     for (i=b;i<13;i++) {
-        ilo_dni_dodmiesiac = sprawdzajaca_ilosc_dni(b, c);
+        ilo_dni_dodmiesiac = sprawdzajaca_ilosc_dni(i, c);
         suma_dni = suma_dni + ilo_dni_dodmiesiac;
+        //printf("miesiac %i - dni %i",i,ilo_dni_dodmiesiac);
     }
 
-    printf("Doszedlem do 80 linii...\n");
+    //printf("Doszedlem do 80 linii...\n");
 
     return suma_dni;
 
