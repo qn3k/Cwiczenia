@@ -4,10 +4,10 @@ int n;
 
 void binarka(int n) {
 
-    if (n>=2) {
+    if (n>=1) {
         //printf("%i \n",n);
         binarka(n/2);
-        printf("%i", (n % 2) );
+        printf("%i", (n % 2) );  
     }
 
 }

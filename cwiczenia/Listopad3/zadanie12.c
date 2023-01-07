@@ -154,5 +154,5 @@ int main () {
 
     wynik = suma_dni_pomiedzy_datami();
 
-    printf("Liczba dni do konca roku to %i\n",wynik);
+    printf("Liczba dni od pierwszej daty do drugiej to %i\n",wynik);
 }
